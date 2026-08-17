@@ -1,5 +1,5 @@
 site_name: Agent Atlas
-site_description: Agent / Agentic AI 中文概念地图与入门词典
+site_description: Agent Engineering 语境型概念地图：不只解释术语，还告诉你它在整个 Agent 世界的哪里
 site_url: https://wanxiao2018.github.io/agent-atlas/
 repo_url: https://github.com/wanxiao2018/agent-atlas
 repo_name: wanxiao2018/agent-atlas
@@ -7,6 +7,7 @@ edit_uri: edit/main/docs/
 
 nav:
   - 首页: index.md
+  - 核心概念地图: concept-map.md
   - 学习路线: roadmap.md
   - 01 基础层:
       - Agent: 01-foundations/agent.md
@@ -45,8 +46,9 @@ nav:
   - 09 Coding Agent:
       - AGENTS.md: 09-coding-agents/agents-md.md
       - Skills: 09-coding-agents/skills.md
-  - 参考:
-      - 术语模板: reference/term-template.md
+  - 项目规范:
+      - 项目原则: reference/project-principles.md
+      - 词条模板: reference/term-template.md
       - 术语成熟度: reference/maturity.md
       - 贡献指南: contributing.md
 
