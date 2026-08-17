@@ -1,5 +1,5 @@
 {
-  "version": "0.2",
+  "version": "0.3",
   "updated": "2026-08-17",
   "description": "Agent Atlas core concept graph. This file is the machine-readable source for nodes and relationships; diagrams are views over this data.",
   "nodes": [
@@ -9,9 +9,9 @@
     {"id":"rag","label":"RAG","category":"context","maturity":"green","status":"stub","path":"05-context-memory/rag.md"},
     {"id":"compaction","label":"Compaction","category":"context","maturity":"yellow","status":"planned","path":null},
     {"id":"model","label":"Model","category":"foundation","maturity":"green","status":"developing","path":"01-foundations/llm.md"},
-    {"id":"agent","label":"Agent","category":"foundation","maturity":"yellow","status":"developing","path":"01-foundations/agent.md"},
-    {"id":"harness","label":"Harness","category":"infrastructure","maturity":"yellow","status":"developing","path":"03-infrastructure/harness.md"},
-    {"id":"agent-loop","label":"Agent Loop","category":"core","maturity":"green","status":"developing","path":"02-agent-core/agent-loop.md"},
+    {"id":"agent","label":"Agent","category":"foundation","maturity":"yellow","status":"atlas-quality","path":"01-foundations/agent.md"},
+    {"id":"harness","label":"Harness","category":"infrastructure","maturity":"yellow","status":"atlas-quality","path":"03-infrastructure/harness.md"},
+    {"id":"agent-loop","label":"Agent Loop","category":"core","maturity":"green","status":"atlas-quality","path":"02-agent-core/agent-loop.md"},
     {"id":"tools","label":"Tools / Tool Calling","category":"tools","maturity":"green","status":"atlas-quality","path":"04-tools/tool-calling.md"},
     {"id":"runtime","label":"Runtime","category":"infrastructure","maturity":"green","status":"atlas-quality","path":"03-infrastructure/runtime.md"},
     {"id":"planning","label":"Planning","category":"core","maturity":"green","status":"stub","path":"02-agent-core/planning.md"},
