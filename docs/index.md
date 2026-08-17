@@ -9,23 +9,13 @@ Agent Atlas 是一个面向 **Agent / Agentic AI 学习者与实践者** 的**�
 
 > 当你在书、论文、技术博客、GitHub、SDK 文档里突然遇到 `Harness`、`Agent Loop`、`Compaction`、`MCP`、`Scaffolding` 这样的词时，怎样快速知道它到底在说什么，并把它放回整个 Agent Engineering 的知识结构里？
 
-因此，每个核心概念不仅回答“它是什么”，还尽量回答：
-
-1. **30 秒怎么理解？**
-2. **为什么会出现这个概念？**
-3. **你通常会在哪种原文语境里遇到它？**
-4. **它在整个 Agent 系统的什么位置？**
-5. **它和相邻概念是什么关系？**
-6. **它最容易和什么混淆？**
-7. **不同公司 / 框架是否用不同名字表达相近概念？**
-8. **这个术语是稳定概念，还是正在形成的新说法？**
-9. **有哪些一手资料可以继续深入？**
+因此，每个核心概念不仅回答“它是什么”，还尽量回答：它为什么出现、通常出现在哪种语境、在系统中位于哪里、与哪些概念相连、最容易和什么混淆，以及哪些一手资料值得继续阅读。
 
 ---
 
 ## 从这张图开始
 
-这张图是 Agent Atlas v0.2 的第一版核心概念骨架。它不是唯一正确的 Agent 架构，而是一张帮助初学者建立心智模型的“地图底图”。
+这张图是 Agent Atlas 的核心概念骨架。它不是唯一正确的 Agent 架构，而是一张帮助初学者建立心智模型的“地图底图”。
 
 ```text
                        ┌── Prompt
@@ -48,9 +38,9 @@ Model ─────→ Agent ←──── Harness
       Action/Observation
 ```
 
-第一次阅读时，不必试图一次记住所有词。先理解几条主线：
+第一次阅读时，不必一次记住所有词。先理解几条主线：
 
-- **Model → Agent**：模型如何从“生成文本”变成“围绕目标持续行动的系统”。
+- **Model → Agent**：模型如何从“生成输出”进入“围绕目标持续行动”的系统。
 - **Context → Memory / RAG / Compaction**：模型这一轮到底能看到什么，以及信息如何被取回、保留和压缩。
 - **Harness → Loop / Tools / Runtime**：模型外部的执行与控制系统怎样让 Agent 真正工作起来。
 - **Agent Loop → Planning → Action / Observation**：Agent 如何一轮一轮决定下一步，并根据反馈继续行动。
@@ -63,17 +53,17 @@ Model ─────→ Agent ←──── Harness
 
 ## Agent Atlas 与普通 Glossary 有什么不同？
 
-### 1. Contextual Glossary｜语境型解释
+### Contextual Glossary｜语境型解释
 
 不仅给定义，还解释这个词**为什么会出现在你正在读的那句话里**。
 
-例如你看到：
+例如：
 
 ```text
 The harness re-enters the agent loop after the tool result is returned.
 ```
 
-Agent Atlas 不会只分别翻译 `harness` 和 `agent loop`，而会解释整句话背后的执行过程：
+我们会把它还原成执行过程：
 
 ```text
 模型请求工具
@@ -87,34 +77,17 @@ Harness 执行工具
 进入下一轮 Agent Loop
 ```
 
-### 2. Concept Graph｜概念关系图
+### Concept Graph｜概念关系图
 
-术语不是孤立单词，而是图中的节点。
+术语不是孤立单词，而是图中的节点。我们记录 `contains`、`feeds`、`uses`、`connects`、`confused-with` 等明确关系，让读者知道一个词的上下游和相邻概念。
 
-我们会记录类似这样的关系：
+### Terminology Observatory｜术语观察站
 
-- `Harness` **contains** `Agent Loop`
-- `Runtime` **may use** `Sandbox`
-- `MCP` **connects** Agent / Tools / external systems
-- `Memory` **feeds** `Context`
-- `Agent Loop` **produces** `Action / Observation` cycles
-- `Harness` **is often confused with** `Framework`
+Agent 领域变化很快。我们区分稳定术语、仍在演化的行业说法，以及新兴或存在争议的表达，并尽量保留来源、时间和不同生态的使用差异。
 
-### 3. Terminology Observatory｜术语观察站
+### Concept Boundaries｜概念边界
 
-Agent 领域变化很快。我们会区分：
-
-- 🟢 **Stable**：定义与用法相对稳定
-- 🟡 **Evolving**：行业广泛使用，但边界或命名仍在演化
-- 🔴 **Emerging / Contested**：新兴、争议较大，尚未形成稳定共识
-
-并尽量记录：早期来源、流行时间、当前常见含义与不同生态的差异。
-
-### 4. Concept Boundaries｜概念边界
-
-很多时候真正困难的不是“不知道 A”，而是“不知道 A 和 B 到底差在哪”。
-
-因此 Agent Atlas 会系统整理：
+真正困难的往往不是“不知道 A”，而是“不知道 A 和 B 到底差在哪”。因此会重点整理：
 
 - Agent vs Workflow
 - Harness vs Framework
@@ -130,30 +103,16 @@ Agent 领域变化很快。我们会区分：
 
 ---
 
-## 我们不追求什么？
+## 阅读方式
 
-Agent Atlas **不以术语数量作为主要 KPI**。
+如果你刚进入 Agent Engineering，可以从：
 
-我们更关心：
+**Agent → Agent Loop → Harness → Runtime → Sandbox → Tool Calling → MCP → Context Engineering → Memory → RAG**
 
-- 有多少核心概念真正解释清楚；
-- 有多少概念关系被明确建立；
-- 有多少组易混淆概念被讲透；
-- 有多少真实原文语境被拆解；
-- 有多少重要结论能追溯到一手资料。
+开始建立第一条主线。
 
-一个词只有“定义”，只能算 **🚧 Stub**；当它至少具备**定义、语境、关系、边界、来源**后，才有资格成为 **✅ Atlas-quality** 词条。
-
----
-
-## 推荐阅读顺序
-
-如果你刚进入 Agent Engineering，可以先按这条主线阅读：
-
-**Agent → Agent Loop → Harness → Runtime → Sandbox → Tool Calling → MCP → Context Engineering → Memory → RAG → Handoff → Evals → Harness Engineering → Loop Engineering**
-
-也可以直接从你正在阅读材料里遇到的陌生词开始，再顺着“相关概念”不断向外探索。
+也可以直接搜索你正在阅读材料里遇到的陌生词，再沿着页面中的关系继续探索。
 
 → [查看学习路线](roadmap.md)  
 → [了解项目设计原则](reference/project-principles.md)  
-→ [查看词条标准模板](reference/term-template.md)
+→ [查看工程说明](reference/engineering.md)

@@ -48,6 +48,7 @@ nav:
       - Skills: 09-coding-agents/skills.md
   - 项目规范:
       - 项目原则: reference/project-principles.md
+      - 工程说明: reference/engineering.md
       - 词条模板: reference/term-template.md
       - 引用与链接规范: reference/citation-style.md
       - 术语成熟度: reference/maturity.md

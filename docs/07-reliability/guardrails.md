@@ -6,20 +6,22 @@
 
 ## 一句话解释
 
-限制、检查或纠正 Agent 输入、输出与行动的安全和质量控制机制。
+用于限制、检查、阻止或纠正 Agent 输入、输出与行动的安全和质量控制机制。
 
 ## 为什么需要它？
 
-Agent 能采取真实行动，因此需要权限、规则、验证和人工确认等边界。
+Agent 能调用工具并采取真实行动，因此需要权限、验证、策略和人工确认等边界来降低错误或高风险操作的影响。
 
 ## 在 Agent 系统中的位置
 
-可部署在输入、模型输出、工具调用和执行层。
+Guardrails 可以部署在输入、模型输出、工具调用、执行前后和 Handoff 等多个位置。
 
 ## 最容易混淆
 
-Guardrails 不是绝对安全保证，而是风险控制层。
+Guardrails 不是“绝对安全保证”。它是一组风险控制机制，仍需要权限隔离、Sandbox、审计、Evals 和 Human-in-the-loop 等共同组成安全体系。
 
-## 继续理解
+## 相关概念
 
-这个页面目前是 Agent Atlas v0.1 的核心定义。后续会继续补充生活类比、最小示例、真实框架案例与一手参考来源。
+- [Sandbox](../03-infrastructure/sandbox.md)
+- [Evals](evals.md)
+- [Stop Condition](../02-agent-core/stop-condition.md)

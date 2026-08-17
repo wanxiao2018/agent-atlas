@@ -6,20 +6,22 @@
 
 ## 一句话解释
 
-由主 Agent 委派某个子任务、通常具有独立上下文或工具配置的 Agent。
+由主 Agent 或编排层委派某个子任务、通常具有独立上下文或工具配置的 Agent。
 
 ## 为什么需要它？
 
-把复杂任务隔离成更小的责任单元，减少主上下文污染并提升并行能力。
+复杂任务可以按责任拆成更小的工作单元，降低主上下文污染，并支持并行或专业化处理。
 
 ## 在 Agent 系统中的位置
 
-通常受 Orchestrator 或主 Agent 调度。
+Sub-agent 通常由主 Agent、Router 或 Orchestrator 调度，并把结果返回上层任务。
 
 ## 最容易混淆
 
-Sub-agent ≠ 普通函数；它通常拥有自己的模型循环和上下文。
+Sub-agent ≠ 普通函数。它通常拥有自己的模型调用、上下文和任务边界；是否拥有完整独立 Agent Loop 则取决于具体系统设计。
 
-## 继续理解
+## 相关概念
 
-这个页面目前是 Agent Atlas v0.1 的核心定义。后续会继续补充生活类比、最小示例、真实框架案例与一手参考来源。
+- [Handoff](handoff.md)
+- [Orchestrator](orchestrator.md)
+- [Agent](../01-foundations/agent.md)

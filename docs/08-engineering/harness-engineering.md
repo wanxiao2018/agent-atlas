@@ -6,20 +6,23 @@
 
 ## 一句话解释
 
-围绕 Agent 的循环、工具、上下文、状态、权限、恢复和可观测性设计可靠运行系统的工程实践。
+围绕 Agent 的循环、工具、上下文、状态、权限、恢复和可观测性，系统设计与优化模型外围运行机制的工程实践。
 
 ## 为什么需要它？
 
-当底层模型能力趋近时，外围运行系统的设计会显著影响 Agent 的真实表现。
+Agent 的真实能力不只取决于模型。工具接口、Context 管理、Runtime、Sandbox、验证与恢复机制都会显著影响任务成功率和可靠性。
 
 ## 在 Agent 系统中的位置
 
-比单纯 Prompt Engineering 更靠近系统工程层。
+Harness Engineering 位于系统工程层，关注“模型怎样被组织成一个可可靠运行的 Agent”，而不只是优化单次 Prompt。
 
 ## 最容易混淆
 
-这是近年快速流行的表达，边界仍在形成。
+这是快速形成中的行业表达，并没有像经典软件工程术语那样完全固定的边界。阅读资料时要结合作者对 `Harness` 的具体范围判断。
 
-## 继续理解
+## 相关概念
 
-这个页面目前是 Agent Atlas v0.1 的核心定义。后续会继续补充生活类比、最小示例、真实框架案例与一手参考来源。
+- [Harness](../03-infrastructure/harness.md)
+- [Agent Loop](../02-agent-core/agent-loop.md)
+- [Runtime](../03-infrastructure/runtime.md)
+- [Loop Engineering](loop-engineering.md)

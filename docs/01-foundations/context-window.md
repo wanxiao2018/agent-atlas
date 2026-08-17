@@ -6,20 +6,22 @@
 
 ## 一句话解释
 
-模型在一次推理时能够直接看到的信息范围。
+模型在一次推理调用中能够直接处理的上下文容量边界。
 
-## 为什么需要它？
+## 为什么需要理解它？
 
-Agent 工作时间越长，历史消息、工具结果和文件内容越多，因此必须管理有限上下文。
+Agent 工作时间越长，历史消息、工具结果、文件内容和检索结果越多。Context Window 有限，因此系统必须决定哪些信息保留、检索、压缩或丢弃。
 
 ## 在 Agent 系统中的位置
 
-约束 Context Engineering、Memory 与 Compaction。
+它直接约束 Context Engineering，并影响 Memory、RAG、Compaction 与长任务设计。
 
 ## 最容易混淆
 
-Context Window ≠ 长期记忆。
+Context Window ≠ 长期记忆。窗口描述“这次调用能直接看到多少”；Memory 描述“哪些信息可以在窗口之外保存并在需要时重新取回”。
 
-## 继续理解
+## 相关概念
 
-这个页面目前是 Agent Atlas v0.1 的核心定义。后续会继续补充生活类比、最小示例、真实框架案例与一手参考来源。
+- [Context Engineering](../05-context-memory/context-engineering.md)
+- [Memory](../05-context-memory/memory.md)
+- [RAG](../05-context-memory/rag.md)

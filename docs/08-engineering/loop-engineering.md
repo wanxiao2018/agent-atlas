@@ -6,20 +6,23 @@
 
 ## 一句话解释
 
-设计 Agent 自动执行、检查、修正和再次执行的闭环，使任务能在较少人工逐步干预下持续推进。
+设计 Agent 自动执行、检查、修正并再次执行的反馈闭环，使任务在较少人工逐步干预下持续逼近目标。
 
 ## 为什么需要它？
 
-重点从“每一步提示模型”转向“设计让 Agent 自己反复工作的控制循环”。
+重点从“人工给模型安排每一步”转向“设计目标、反馈、验证、停止条件和环境，让 Agent 自己在循环中推进任务”。
 
 ## 在 Agent 系统中的位置
 
-与 Harness Engineering、Evals、Stop Conditions 强相关。
+它与 Agent Loop、Harness Engineering、Evals、Verification 和 Stop Conditions 强相关。
 
 ## 最容易混淆
 
-Loop Engineering 不是经典标准术语，属于正在形成中的行业表达。
+`Agent Loop` 是循环机制本身；`Loop Engineering` 是如何把反馈、验证和停止逻辑设计得有效。后者是正在形成中的行业表达，而不是经典标准术语。
 
-## 继续理解
+## 相关概念
 
-这个页面目前是 Agent Atlas v0.1 的核心定义。后续会继续补充生活类比、最小示例、真实框架案例与一手参考来源。
+- [Agent Loop](../02-agent-core/agent-loop.md)
+- [Harness Engineering](harness-engineering.md)
+- [Evals](../07-reliability/evals.md)
+- [Stop Condition](../02-agent-core/stop-condition.md)

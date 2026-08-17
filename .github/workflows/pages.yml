@@ -20,17 +20,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
           cache: pip
+
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Check Markdown source links
+        run: python scripts/normalize_markdown_links.py --check
+
+      - name: Validate project data
+        run: python scripts/validate_project.py
+
       - name: Build site
         run: mkdocs build --strict
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

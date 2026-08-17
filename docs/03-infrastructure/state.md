@@ -6,20 +6,22 @@
 
 ## 一句话解释
 
-Agent 在任务过程中需要持续保存的当前信息，例如步骤、变量、文件、任务进度或会话数据。
+Agent 在一次任务运行过程中需要持续保存的当前信息，例如步骤、变量、文件引用、任务进度或会话数据。
 
 ## 为什么需要它？
 
-没有状态，Agent 很难跨步骤保持一致性。
+没有状态，Agent 很难跨步骤保持一致性，也难以暂停、恢复或协调多阶段任务。
 
 ## 在 Agent 系统中的位置
 
-与 Memory、Checkpoint、Session 紧密相关。
+State 通常由 Harness / Runtime 管理，并与 Session、Checkpoint、Memory 和 Context 相互作用。
 
 ## 最容易混淆
 
-State 更偏当前任务运行数据；Memory 更强调可在之后检索和复用的信息。
+State 更偏“当前运行现在是什么情况”；Memory 更强调“哪些信息值得在之后再次检索和复用”。两者可以使用相同存储技术，但语义职责不同。
 
-## 继续理解
+## 相关概念
 
-这个页面目前是 Agent Atlas v0.1 的核心定义。后续会继续补充生活类比、最小示例、真实框架案例与一手参考来源。
+- [Runtime](runtime.md)
+- [Memory](../05-context-memory/memory.md)
+- [Context Engineering](../05-context-memory/context-engineering.md)

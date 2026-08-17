@@ -1,5 +1,5 @@
 {
-  "version": "0.3",
+  "schema_version": 1,
   "updated": "2026-08-17",
   "description": "Agent Atlas core concept graph. This file is the machine-readable source for nodes and relationships; diagrams are views over this data.",
   "nodes": [

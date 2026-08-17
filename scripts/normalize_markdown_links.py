@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import argparse
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,13 +14,11 @@ SOURCE_WITH_PUBLISHER = re.compile(
     r"(?P<title>[^:\n]+):\s*"
     r"(?P<url>https?://\S+)\s*$"
 )
-
 SOURCE_SIMPLE = re.compile(
     r"^(?P<indent>\s*)(?P<bullet>[-*+]\s+)?"
     r"(?P<title>[^:\n]+):\s*"
     r"(?P<url>https?://\S+)\s*$"
 )
-
 HEADING = re.compile(r"^(?P<hashes>#{1,6})\s+(?P<title>.+?)\s*$")
 FENCE = re.compile(r"^\s*(?P<fence>`{3,}|~{3,})")
 
@@ -42,8 +42,7 @@ def normalize_text(text: str) -> tuple[str, int]:
 
         fence_match = FENCE.match(body)
         if fence_match:
-            marker = fence_match.group("fence")
-            marker_char = marker[0]
+            marker_char = fence_match.group("fence")[0]
             if not in_fence:
                 in_fence = True
                 fence_char = marker_char
@@ -75,25 +74,22 @@ def normalize_text(text: str) -> tuple[str, int]:
             continue
 
         match = SOURCE_WITH_PUBLISHER.match(body)
-        if match:
-            publisher = match.group("publisher").strip()
-            title = match.group("title").strip()
-            url = match.group("url").strip()
-            indent = match.group("indent")
-            if "[" not in title and "](" not in title:
-                out.append(f"{indent}- {publisher}, [{title}]({url}){newline}")
-                changed += 1
-                continue
+        if match and "[" not in match.group("title"):
+            out.append(
+                f"{match.group('indent')}- {match.group('publisher').strip()}, "
+                f"[{match.group('title').strip()}]({match.group('url').strip()}){newline}"
+            )
+            changed += 1
+            continue
 
         match = SOURCE_SIMPLE.match(body)
-        if match:
-            title = match.group("title").strip()
-            url = match.group("url").strip()
-            indent = match.group("indent")
-            if "[" not in title and "](" not in title:
-                out.append(f"{indent}- [{title}]({url}){newline}")
-                changed += 1
-                continue
+        if match and "[" not in match.group("title"):
+            out.append(
+                f"{match.group('indent')}- [{match.group('title').strip()}]"
+                f"({match.group('url').strip()}){newline}"
+            )
+            changed += 1
+            continue
 
         out.append(line)
 
@@ -109,23 +105,36 @@ def markdown_files() -> list[Path]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true", help="Fail if normalization would change files")
+    args = parser.parse_args()
+
     total = 0
     touched: list[str] = []
 
     for path in markdown_files():
         original = path.read_text(encoding="utf-8")
         normalized, count = normalize_text(original)
-        if count:
+        if not count:
+            continue
+        total += count
+        touched.append(str(path.relative_to(ROOT)))
+        if not args.check:
             path.write_text(normalized, encoding="utf-8")
-            total += count
-            touched.append(str(path.relative_to(ROOT)))
 
-    if touched:
-        print(f"Normalized {total} source link(s) in {len(touched)} file(s):")
+    if not touched:
+        print("Markdown source links are normalized.")
+        return
+
+    if args.check:
+        print(f"Found {total} non-normalized source link(s) in {len(touched)} file(s):")
         for path in touched:
             print(f"- {path}")
-    else:
-        print("No naked source-list URLs found in reference sections.")
+        sys.exit(1)
+
+    print(f"Normalized {total} source link(s) in {len(touched)} file(s):")
+    for path in touched:
+        print(f"- {path}")
 
 
 if __name__ == "__main__":
