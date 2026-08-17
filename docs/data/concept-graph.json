@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "updated": "2026-08-17",
+  "description": "Agent Atlas core concept graph. This file is the machine-readable source for nodes and relationships; diagrams are views over this data.",
+  "nodes": [
+    {"id":"prompt","label":"Prompt","category":"context","maturity":"green","status":"developing","path":"01-foundations/prompt.md"},
+    {"id":"context","label":"Context","category":"context","maturity":"green","status":"stub","path":"05-context-memory/context-engineering.md"},
+    {"id":"memory","label":"Memory","category":"context","maturity":"yellow","status":"stub","path":"05-context-memory/memory.md"},
+    {"id":"rag","label":"RAG","category":"context","maturity":"green","status":"stub","path":"05-context-memory/rag.md"},
+    {"id":"compaction","label":"Compaction","category":"context","maturity":"yellow","status":"planned","path":null},
+    {"id":"model","label":"Model","category":"foundation","maturity":"green","status":"developing","path":"01-foundations/llm.md"},
+    {"id":"agent","label":"Agent","category":"foundation","maturity":"yellow","status":"developing","path":"01-foundations/agent.md"},
+    {"id":"harness","label":"Harness","category":"infrastructure","maturity":"yellow","status":"developing","path":"03-infrastructure/harness.md"},
+    {"id":"agent-loop","label":"Agent Loop","category":"core","maturity":"green","status":"developing","path":"02-agent-core/agent-loop.md"},
+    {"id":"tools","label":"Tools","category":"tools","maturity":"green","status":"developing","path":"04-tools/tool-calling.md"},
+    {"id":"runtime","label":"Runtime","category":"infrastructure","maturity":"green","status":"stub","path":"03-infrastructure/runtime.md"},
+    {"id":"planning","label":"Planning","category":"core","maturity":"green","status":"stub","path":"02-agent-core/planning.md"},
+    {"id":"mcp","label":"MCP","category":"tools","maturity":"green","status":"stub","path":"04-tools/mcp.md"},
+    {"id":"sandbox","label":"Sandbox","category":"infrastructure","maturity":"green","status":"stub","path":"03-infrastructure/sandbox.md"},
+    {"id":"action-observation","label":"Action / Observation","category":"core","maturity":"green","status":"stub","path":"02-agent-core/action-observation.md"}
+  ],
+  "edges": [
+    {"from":"prompt","to":"context","type":"feeds","label":"feeds"},
+    {"from":"memory","to":"context","type":"feeds","label":"feeds"},
+    {"from":"rag","to":"context","type":"feeds","label":"feeds"},
+    {"from":"compaction","to":"context","type":"transforms","label":"compresses"},
+    {"from":"model","to":"agent","type":"powers","label":"powers"},
+    {"from":"harness","to":"agent","type":"enables","label":"enables"},
+    {"from":"harness","to":"agent-loop","type":"contains","label":"contains"},
+    {"from":"harness","to":"tools","type":"contains","label":"contains"},
+    {"from":"harness","to":"runtime","type":"integrates","label":"integrates"},
+    {"from":"agent-loop","to":"planning","type":"uses","label":"uses"},
+    {"from":"planning","to":"action-observation","type":"produces","label":"guides"},
+    {"from":"tools","to":"mcp","type":"connects","label":"may connect via"},
+    {"from":"runtime","to":"sandbox","type":"isolated-by","label":"may be isolated by"}
+  ]
+}
