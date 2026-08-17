@@ -49,6 +49,24 @@ Agent Atlas 不是单纯的术语收集项目。新增一个词之前，先判�
 - **能引用一手资料时，不用二手总结代替。**
 - **如果已有优秀项目把某个主题讲得更好，优先链接过去而不是复制。**
 
+## 引用与链接格式
+
+参考来源不要直接裸露 URL，统一使用标准 Markdown 链接：
+
+```md
+- Anthropic, [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
+- OpenAI, [New tools for building agents](https://openai.com/index/new-tools-for-building-agents/)
+- OpenAI Agents SDK, [Agents](https://openai.github.io/openai-agents-python/agents/)
+```
+
+正文中引用资料时，也优先把资料标题本身做成链接，例如：
+
+```md
+Anthropic 在 [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) 中讨论了 workflow 与 agent 的区别。
+```
+
+详细规范见 [引用与链接规范](reference/citation-style.md)。仓库中的 Markdown source-link Action 会自动修正常见的 `标题: https://...` 写法，但自动化只作为兜底。
+
 ## Concept Graph 关系
 
 推荐使用明确关系，而不是只写“相关”：
