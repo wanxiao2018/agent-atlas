@@ -12,6 +12,8 @@ Agent Atlas 的核心不是一串互不相关的术语，而是一张不断生�
 
 ## v0.2 核心骨架
 
+这张 ASCII 图会长期保留，因为它是最适合第一次建立整体直觉的版本：
+
 ```text
                        ┌── Prompt
                        │
@@ -32,6 +34,51 @@ Model ─────→ Agent ←──── Harness
             ↓
       Action/Observation
 ```
+
+## 可点击 Concept Graph v1
+
+下面是同一套核心骨架的第一版交互视图。**点击已有词条的节点，可以直接进入对应概念页。**
+
+```mermaid
+graph TB
+    Prompt[Prompt] -->|feeds| Context[Context]
+    Memory[Memory] -->|feeds| Context
+    RAG[RAG] -->|feeds| Context
+    Compaction[Compaction] -->|compresses| Context
+
+    Model[Model / LLM] -->|powers| Agent[Agent]
+    Harness[Harness] -->|enables| Agent
+
+    Harness -->|contains| AgentLoop[Agent Loop]
+    Harness -->|contains| Tools[Tools]
+    Harness -->|integrates| Runtime[Runtime]
+
+    AgentLoop -->|uses| Planning[Planning]
+    Planning -->|guides| ActionObservation[Action / Observation]
+    Tools -->|may connect via| MCP[MCP]
+    Runtime -->|may be isolated by| Sandbox[Sandbox]
+
+    click Prompt "../01-foundations/prompt/" "打开 Prompt"
+    click Context "../05-context-memory/context-engineering/" "打开 Context Engineering"
+    click Memory "../05-context-memory/memory/" "打开 Memory"
+    click RAG "../05-context-memory/rag/" "打开 RAG"
+    click Model "../01-foundations/llm/" "打开 LLM"
+    click Agent "../01-foundations/agent/" "打开 Agent"
+    click Harness "../03-infrastructure/harness/" "打开 Harness"
+    click AgentLoop "../02-agent-core/agent-loop/" "打开 Agent Loop"
+    click Tools "../04-tools/tool-calling/" "打开 Tool Calling"
+    click Runtime "../03-infrastructure/runtime/" "打开 Runtime"
+    click Planning "../02-agent-core/planning/" "打开 Planning"
+    click MCP "../04-tools/mcp/" "打开 MCP"
+    click Sandbox "../03-infrastructure/sandbox/" "打开 Sandbox"
+    click ActionObservation "../02-agent-core/action-observation/" "打开 Action / Observation"
+```
+
+!!! note "怎么看这张交互图"
+    箭头上的词不是装饰，而是在尝试表达**关系类型**。例如 `Memory --feeds--> Context` 表示 Memory 中的信息可以被取回并进入当前 Context；`Harness --contains--> Agent Loop` 表示在我们的工程心智模型里，Agent Loop 通常是 Harness 的一个核心组成部分。
+
+!!! warning "这不是唯一正确的 Agent 架构"
+    不同框架会把边界画得不一样。Agent Atlas 记录的是**帮助学习和比较的概念关系**，不是要把某一种产品架构包装成统一标准。
 
 ## 怎么读这张图？
 
@@ -142,23 +189,67 @@ Runtime 不等于 Sandbox
 
 ## Concept Graph 的关系类型
 
-为了让后续知识库可以真正变成“图”，Agent Atlas 不只记录“相关术语”，还计划记录关系类型。
+为了让后续知识库可以真正变成“图”，Agent Atlas 不只记录“相关术语”，还记录关系类型。
 
 | 关系 | 含义 | 示例 |
 |---|---|---|
 | `contains` | A 通常包含 B | Harness → Agent Loop |
 | `feeds` | A 为 B 提供信息 | Memory → Context |
-| `uses` | A 使用 B | Agent → Tools |
-| `executes-in` | A 在 B 中执行 | Tool code → Runtime |
-| `isolated-by` | A 受 B 隔离 | Code execution → Sandbox |
-| `connects` | A 连接多个系统 | MCP → Agent / external tools |
+| `uses` | A 使用 B | Agent Loop → Planning |
+| `integrates` | A 将 B 接入自己的运行体系 | Harness → Runtime |
+| `isolated-by` | A 受 B 隔离 | Execution → Sandbox |
+| `connects` | A 用于连接系统或能力 | Tools → MCP |
 | `produces` | A 产生 B | Action → Observation |
 | `precedes` | 学习或流程上通常先于 | Planning → Action |
 | `contrasts-with` | 概念边界对比 | Agent ↔ Workflow |
 | `confused-with` | 高频混淆 | Harness ↔ Framework |
 | `evolved-from` | 术语 / 工程范式演化 | Prompt Engineering → Context Engineering |
 
-这些关系未来可以用于生成可点击的交互式 Concept Map。
+这些关系会逐渐成为 Agent Atlas 的真正“骨架”。
+
+---
+
+## 图的数据不是藏在页面里的
+
+从 Concept Graph v1 开始，节点和边同时保存为机器可读数据：
+
+```text
+docs/data/concept-graph.json
+```
+
+每个节点会逐步记录：
+
+```text
+id
+label
+category
+maturity
+status
+path
+```
+
+每条边会记录：
+
+```text
+from
+→ to
+→ type
+→ label
+```
+
+这样未来可以在同一份数据上生成不同视图：
+
+```text
+初学者主干图
+工程基础设施图
+Context / Memory 专题图
+Multi-Agent 图
+可靠性与 Evals 图
+术语演化图
+易混淆概念图
+```
+
+而不需要维护六套互相矛盾的手工关系。
 
 ---
 
