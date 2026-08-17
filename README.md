@@ -6,6 +6,10 @@ Agent / Agentic AI 中文概念地图与入门词典。
 
 **当前版本：v0.1 · 28 个核心术语**
 
+## 在线阅读
+
+https://wanxiao2018.github.io/agent-atlas/
+
 ## 本地预览
 
 ```bash
@@ -21,9 +25,7 @@ mkdocs serve
 
 仓库包含 `.github/workflows/pages.yml`。推送到 `main` 后，GitHub Actions 会构建 MkDocs 站点并通过 GitHub Pages 发布。
 
-首次使用时，在仓库 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**。
-
-预期地址：`https://wanxiao2018.github.io/agent-atlas/`
+仓库 Pages 已配置为 **GitHub Actions** 发布模式。
 
 ## 内容结构
 
