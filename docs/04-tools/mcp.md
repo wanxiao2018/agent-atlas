@@ -424,7 +424,7 @@ MCP 已经形成正式规范、版本化协议和广泛客户端 / Server 生态
 ## 一手资料
 
 - Model Context Protocol, [Introduction](https://modelcontextprotocol.io/docs/getting-started/intro)
-- MCP Architecture: https://modelcontextprotocol.io/specification/2025-06-18/architecture
-- MCP Tools specification: https://modelcontextprotocol.io/specification/2025-06-18/server/tools
-- MCP Resources specification: https://modelcontextprotocol.io/specification/2025-11-25/server/resources
-- MCP Overview / primitives: https://modelcontextprotocol.io/specification/2024-11-05/server/index
+- [MCP Architecture](https://modelcontextprotocol.io/specification/2025-06-18/architecture)
+- [MCP Tools specification](https://modelcontextprotocol.io/specification/2025-06-18/server/tools)
+- [MCP Resources specification](https://modelcontextprotocol.io/specification/2025-11-25/server/resources)
+- [MCP Overview / primitives](https://modelcontextprotocol.io/specification/2024-11-05/server/index)

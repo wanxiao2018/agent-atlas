@@ -522,4 +522,4 @@ session memory
 - Anthropic, [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 - Anthropic, Scaling Managed Agents: Decoupling the brain from the hands: https://www.anthropic.com/engineering/managed-agents
 - OpenAI Agents SDK, [Sandbox / memory support](https://openai.github.io/openai-agents-python/sandbox/guide/)
-- OpenAI Agents SDK release notes (sandbox memory support): https://openai.github.io/openai-agents-python/release/
+- [OpenAI Agents SDK release notes (sandbox memory support)](https://openai.github.io/openai-agents-python/release/)
