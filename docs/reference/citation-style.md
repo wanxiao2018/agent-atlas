@@ -13,7 +13,7 @@ Agent Atlas 的参考来源既要便于读者阅读，也要保持 Markdown 源�
 不要写成裸 URL：
 
 ```md
-Anthropic, Building Effective Agents: https://www.anthropic.com/engineering/building-effective-agents
+- Anthropic, [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
 ```
 
 应该写成：
@@ -84,7 +84,7 @@ Anthropic 在 Building Effective Agents 中提到这个概念：https://...
 它会把下面这种常见格式：
 
 ```md
-Anthropic, Building Effective Agents: https://...
+- Anthropic, [Building Effective Agents](https://...)
 ```
 
 自动规范为：
