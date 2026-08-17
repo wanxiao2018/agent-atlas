@@ -13,7 +13,7 @@ Agent Atlas 的参考来源既要便于读者阅读，也要保持 Markdown 源�
 不要写成裸 URL：
 
 ```md
-- Anthropic, [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
+Anthropic, Building Effective Agents: https://www.anthropic.com/engineering/building-effective-agents
 ```
 
 应该写成：
@@ -81,16 +81,20 @@ Anthropic 在 Building Effective Agents 中提到这个概念：https://...
 
 仓库包含 `scripts/normalize_markdown_links.py` 和对应 GitHub Action。
 
-它会把下面这种常见格式：
+它会在“参考来源 / 一手资料”等来源章节中，把下面这种常见格式：
 
 ```md
-- Anthropic, [Building Effective Agents](https://...)
+Anthropic, Building Effective Agents: https://...
+MCP Architecture: https://...
 ```
 
 自动规范为：
 
 ```md
 - Anthropic, [Building Effective Agents](https://...)
+- [MCP Architecture](https://...)
 ```
+
+脚本会跳过 fenced code block，因此本页这种教学用的“错误示例”不会再被自动改写。
 
 自动化只是兜底。新增或修改词条时，仍应直接按本页规范书写。
