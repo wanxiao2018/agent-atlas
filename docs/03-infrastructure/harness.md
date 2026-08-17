@@ -571,9 +571,9 @@ Model ─────→ Agent ←──── Harness
 
 ## 一手资料
 
-- Anthropic, Effective harnesses for long-running agents: https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
-- Anthropic, Harness design for long-running application development: https://www.anthropic.com/engineering/harness-design-long-running-apps
+- Anthropic, [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
+- Anthropic, [Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 - Anthropic, Scaling Managed Agents: Decoupling the brain from the hands: https://www.anthropic.com/engineering/managed-agents
-- OpenAI, The next evolution of the Agents SDK: https://openai.com/index/the-next-evolution-of-the-agents-sdk/
-- OpenAI Agents SDK, SDK overview: https://openai.github.io/openai-agents-python/
-- Microsoft Agent Framework, Agent Harnesses: https://learn.microsoft.com/en-us/agent-framework/agents/harness
+- OpenAI, [The next evolution of the Agents SDK](https://openai.com/index/the-next-evolution-of-the-agents-sdk/)
+- OpenAI Agents SDK, [SDK overview](https://openai.github.io/openai-agents-python/)
+- Microsoft Agent Framework, [Agent Harnesses](https://learn.microsoft.com/en-us/agent-framework/agents/harness)

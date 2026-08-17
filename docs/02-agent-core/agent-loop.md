@@ -547,8 +547,8 @@ LLM 时代的新变化是：
 
 ## 一手资料
 
-- OpenAI Agents SDK, SDK overview: https://openai.github.io/openai-agents-python/
-- OpenAI Agents SDK, Sandbox concepts: https://openai.github.io/openai-agents-python/sandbox/guide/
-- OpenAI, The next evolution of the Agents SDK: https://openai.com/index/the-next-evolution-of-the-agents-sdk/
-- Anthropic, Building Effective Agents: https://www.anthropic.com/engineering/building-effective-agents
-- Anthropic, Trustworthy agents in practice: https://www.anthropic.com/research/trustworthy-agents
+- OpenAI Agents SDK, [SDK overview](https://openai.github.io/openai-agents-python/)
+- OpenAI Agents SDK, [Sandbox concepts](https://openai.github.io/openai-agents-python/sandbox/guide/)
+- OpenAI, [The next evolution of the Agents SDK](https://openai.com/index/the-next-evolution-of-the-agents-sdk/)
+- Anthropic, [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
+- Anthropic, [Trustworthy agents in practice](https://www.anthropic.com/research/trustworthy-agents)

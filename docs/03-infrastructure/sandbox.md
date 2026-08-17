@@ -357,7 +357,7 @@ Agent 时代的新变化不是“发明了 Sandbox”，而是 Sandbox 开始成
 
 ## 一手资料
 
-- OpenAI, The next evolution of the Agents SDK: https://openai.com/index/the-next-evolution-of-the-agents-sdk/
-- OpenAI Agents SDK, Sandbox concepts: https://openai.github.io/openai-agents-python/sandbox/guide/
-- OpenAI Agents SDK, Sandbox clients: https://openai.github.io/openai-agents-python/sandbox/clients/
-- OpenAI Agents SDK, Sandbox quickstart: https://openai.github.io/openai-agents-python/sandbox_agents/
+- OpenAI, [The next evolution of the Agents SDK](https://openai.com/index/the-next-evolution-of-the-agents-sdk/)
+- OpenAI Agents SDK, [Sandbox concepts](https://openai.github.io/openai-agents-python/sandbox/guide/)
+- OpenAI Agents SDK, [Sandbox clients](https://openai.github.io/openai-agents-python/sandbox/clients/)
+- OpenAI Agents SDK, [Sandbox quickstart](https://openai.github.io/openai-agents-python/sandbox_agents/)

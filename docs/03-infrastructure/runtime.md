@@ -295,7 +295,7 @@ Sandbox ─isolates──────→ Code / Commands
 
 ## 一手资料
 
-- OpenAI, The next evolution of the Agents SDK: https://openai.com/index/the-next-evolution-of-the-agents-sdk/
-- OpenAI Agents SDK, Sandbox concepts: https://openai.github.io/openai-agents-python/sandbox/guide/
-- OpenAI Agents SDK, Sandbox API reference: https://openai.github.io/openai-agents-python/ref/sandbox/
-- Microsoft Agent Framework, Agent Harnesses: https://learn.microsoft.com/en-us/agent-framework/agents/harness
+- OpenAI, [The next evolution of the Agents SDK](https://openai.com/index/the-next-evolution-of-the-agents-sdk/)
+- OpenAI Agents SDK, [Sandbox concepts](https://openai.github.io/openai-agents-python/sandbox/guide/)
+- OpenAI Agents SDK, [Sandbox API reference](https://openai.github.io/openai-agents-python/ref/sandbox/)
+- Microsoft Agent Framework, [Agent Harnesses](https://learn.microsoft.com/en-us/agent-framework/agents/harness)

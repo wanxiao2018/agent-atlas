@@ -362,8 +362,8 @@ Function Calling
 
 ## 一手资料
 
-- OpenAI, Function Calling in the OpenAI API: https://help.openai.com/en/articles/8555517
-- OpenAI, A practical guide to building agents: https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/
-- OpenAI Agents SDK, Tools / Function tools: https://openai.github.io/openai-agents-python/
-- Anthropic, Writing effective tools for AI agents: https://www.anthropic.com/engineering/writing-tools-for-agents
-- Model Context Protocol, Tools specification: https://modelcontextprotocol.io/specification/2025-06-18/server/tools
+- OpenAI, [Function Calling in the OpenAI API](https://help.openai.com/en/articles/8555517)
+- OpenAI, [A practical guide to building agents](https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/)
+- OpenAI Agents SDK, [Tools / Function tools](https://openai.github.io/openai-agents-python/)
+- Anthropic, [Writing effective tools for AI agents](https://www.anthropic.com/engineering/writing-tools-for-agents)
+- Model Context Protocol, [Tools specification](https://modelcontextprotocol.io/specification/2025-06-18/server/tools)

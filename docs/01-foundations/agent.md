@@ -468,8 +468,8 @@ Agent ─contrasts-with──→ Workflow
 
 ## 一手资料
 
-- Anthropic, Building Effective Agents: https://www.anthropic.com/engineering/building-effective-agents
-- Anthropic, Trustworthy agents in practice: https://www.anthropic.com/research/trustworthy-agents
-- OpenAI, New tools for building agents: https://openai.com/index/new-tools-for-building-agents/
-- OpenAI Agents SDK, Agents: https://openai.github.io/openai-agents-python/agents/
-- OpenAI Agents SDK, SDK overview: https://openai.github.io/openai-agents-python/
+- Anthropic, [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
+- Anthropic, [Trustworthy agents in practice](https://www.anthropic.com/research/trustworthy-agents)
+- OpenAI, [New tools for building agents](https://openai.com/index/new-tools-for-building-agents/)
+- OpenAI Agents SDK, [Agents](https://openai.github.io/openai-agents-python/agents/)
+- OpenAI Agents SDK, [SDK overview](https://openai.github.io/openai-agents-python/)
