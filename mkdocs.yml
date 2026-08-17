@@ -1,0 +1,90 @@
+site_name: Agent Atlas
+site_description: Agent / Agentic AI 中文概念地图与入门词典
+site_url: https://wanxiao2018.github.io/agent-atlas/
+repo_url: https://github.com/wanxiao2018/agent-atlas
+repo_name: wanxiao2018/agent-atlas
+edit_uri: edit/main/docs/
+
+nav:
+  - 首页: index.md
+  - 学习路线: roadmap.md
+  - 01 基础层:
+      - Agent: 01-foundations/agent.md
+      - LLM: 01-foundations/llm.md
+      - Prompt: 01-foundations/prompt.md
+      - Context Window: 01-foundations/context-window.md
+  - 02 Agent 核心机制:
+      - Agent Loop: 02-agent-core/agent-loop.md
+      - Planning: 02-agent-core/planning.md
+      - Action / Observation: 02-agent-core/action-observation.md
+      - Stop Condition: 02-agent-core/stop-condition.md
+  - 03 Agent 基础设施:
+      - Harness: 03-infrastructure/harness.md
+      - Runtime: 03-infrastructure/runtime.md
+      - Sandbox: 03-infrastructure/sandbox.md
+      - State: 03-infrastructure/state.md
+  - 04 工具系统:
+      - Tool Calling: 04-tools/tool-calling.md
+      - Function Calling: 04-tools/function-calling.md
+      - MCP: 04-tools/mcp.md
+  - 05 上下文与记忆:
+      - Context Engineering: 05-context-memory/context-engineering.md
+      - Memory: 05-context-memory/memory.md
+      - RAG: 05-context-memory/rag.md
+  - 06 多 Agent 协作:
+      - Sub-agent: 06-multi-agent/sub-agent.md
+      - Handoff: 06-multi-agent/handoff.md
+      - Orchestrator: 06-multi-agent/orchestrator.md
+  - 07 可靠性:
+      - Evals: 07-reliability/evals.md
+      - Tracing: 07-reliability/tracing.md
+      - Guardrails: 07-reliability/guardrails.md
+  - 08 Agent 工程:
+      - Harness Engineering: 08-engineering/harness-engineering.md
+      - Loop Engineering: 08-engineering/loop-engineering.md
+  - 09 Coding Agent:
+      - AGENTS.md: 09-coding-agents/agents-md.md
+      - Skills: 09-coding-agents/skills.md
+  - 参考:
+      - 术语模板: reference/term-template.md
+      - 术语成熟度: reference/maturity.md
+      - 贡献指南: contributing.md
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
